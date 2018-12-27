@@ -2,7 +2,7 @@ from math import ceil, floor
 import secrets
 
 
-class PrimaryProducer():
+class PrimaryProducer:
     def __init__(
         self,
         name=None,
@@ -28,9 +28,11 @@ class PrimaryProducer():
         self.balance = balance
 
     def __repr__(self):
-        return f'<PrimaryProducer {self.name} ' + \
-            f'({self.labourers} labourers, ' + \
-            f'{self.stock} stock, {self.balance} balance>'
+        return (
+            f"<PrimaryProducer {self.name} "
+            + f"({self.labourers} labourers, "
+            + f"{self.stock} stock, {self.balance} balance>"
+        )
 
     def tick(self):
         self.labourers = self._labour_force()
@@ -41,7 +43,7 @@ class PrimaryProducer():
     def _labour_force(self):
         return min(
             self.max_labourers,
-            floor((self.credit + self.balance) / self.wages_per_labour_day)
+            floor((self.credit + self.balance) / self.wages_per_labour_day),
         )
 
     def _produce(self):

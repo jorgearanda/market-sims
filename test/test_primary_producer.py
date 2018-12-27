@@ -3,7 +3,7 @@ from pytest import approx
 from primary_producer import PrimaryProducer
 
 
-class TestDefaultPrimaryProducer():
+class TestDefaultPrimaryProducer:
     def setup(self):
         self.p = PrimaryProducer()
 
@@ -21,7 +21,7 @@ class TestDefaultPrimaryProducer():
         assert self.p.balance == 0
 
     def test_repr(self):
-        assert 'PrimaryProducer' in str(self.p)
+        assert "PrimaryProducer" in str(self.p)
 
     def test_tick(self):
         self.p.tick()
